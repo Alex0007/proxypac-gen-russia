@@ -4,6 +4,6 @@
     "dependencies": {
         "express": "x",
         "node-schedule": "x",
-        "https": "x"
+        "async": "x"
     }
 }

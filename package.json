@@ -1,0 +1,8 @@
+{
+    "name": "proxypac_tor_russia",
+    "private": true,
+    "dependencies": {
+        "express": "x",
+        "node-schedule": "x"
+    }
+}

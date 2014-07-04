@@ -29,21 +29,26 @@ function find_IP(filename) {
             ips[key] = ips[key].slice(0, -1);
         }
         console.log(ips);
+
+        //create pac-file
+        build_pac("1");
+
     });
 }
 
+function build_pac(filename) {
+    console.log("last");
+}
 
 function generate_pac() {
     console.log('generating new proxy pac');
+
     //saving file with rkn dump
     var file = fs.createWriteStream("dump.txt");
     var r = request("https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv").pipe(file);
-
-
     r.on("finish", function () {
+        //parse_ip
         find_IP("dump.txt");
-
-
     });
 }
 var server = app.listen(process.env.PORT || 3000, function () {

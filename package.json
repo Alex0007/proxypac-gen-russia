@@ -3,6 +3,7 @@
     "private": true,
     "dependencies": {
         "express": "x",
-        "node-schedule": "x"
+        "node-schedule": "x",
+        "https": "x"
     }
 }

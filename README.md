@@ -1,2 +1,2 @@
-#proxypac_tor_russia
+#proxypac_gen_russia (в разработке)
 генератор .pac файла для tor на базе выгрузки Роскомнадзора (в разработке)

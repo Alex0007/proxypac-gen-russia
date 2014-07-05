@@ -1,7 +1,7 @@
 // TODO PARSE URLs var blocked_urls
 
 var dump_url = 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv';
-var proxy_string = 'SOCKS 127.0.0.1:9050'; // tor proxy
+var proxy_string = 'SOCKS5 127.0.0.1:9050'; // tor proxy
 
 
 var fs = require('fs');
@@ -68,7 +68,7 @@ function build_pac(filename, ips, urls) { // .pac-file builder
     file.write('\n');
     // insert URLs end
 
-    file.write('      ];\n\n  if ((blockedips.indexOf(dnsResolve(host)) != -1) || (!isResolvable(host)) {\n    return "' + proxy_string + '; DIRECT";\n  }\n\n  return "DIRECT";\n}');
+    file.write('      ];\n\n  if ((blockedips.indexOf(dnsResolve(host)) != -1) || (blockedurls.indexOf(host) != -1)) {\n    return "' + proxy_string + '; DIRECT";\n  }\n\n  return "DIRECT";\n}');
     file.end();
 
 }

@@ -1,6 +1,5 @@
 {
     "name": "proxypac_gen_russia",
-    "private": true,
     "dependencies": {
         "express": "x",
         "node-schedule": "x",

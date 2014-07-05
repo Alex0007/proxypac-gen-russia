@@ -1,5 +1,5 @@
 var dump_url = 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv';
-var proxy_string = 'SOCKS5 127.0.0.1:9050; DIRECT'; // tor proxy
+var proxy_string = 'SOCKS5 127.0.0.1:9050'; // tor proxy
 
 
 var fs = require('fs');
@@ -45,7 +45,7 @@ function build_pac(filename, ips) { // .pac-file builder
     file.write('// ' + moment().utc().add('hours', 4).format('LLL') + " (MSK)\n\n");
     file.write('function FindProxyForURL(url, host) {\n  blockedips = [ ');
     // insert IPs list here
-    file.write('      ];\n\n  if (blockedips.indexOf(dnsResolve(host)) != -1) {\n    return "' + proxy_string + '";\n  }\n\n  return "DIRECT";\n}');
+    file.write('      ];\n\n  if (blockedips.indexOf(dnsResolve(host)) != -1) {\n    return "' + proxy_string + '; DIRECT";\n  }\n\n  return "DIRECT";\n}');
     file.end();
 
 }

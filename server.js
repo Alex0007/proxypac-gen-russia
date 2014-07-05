@@ -68,7 +68,7 @@ function build_pac(filename, ips, urls) { // .pac-file builder
     file.write('\n');
     // insert URLs end
 
-    file.write('      ];\n\n  if ((blockedips.indexOf(dnsResolve(host)) != -1) || (blockedurls.indexOf(host) != -1)) {\n    return "' + proxy_string + '; DIRECT";\n  }\n\n  return "DIRECT";\n}');
+    file.write('      ];\n\n  if ((blockedips.indexOf(dnsResolve(host)) != -1) || (!isResolvable(host)) {\n    return "' + proxy_string + '; DIRECT";\n  }\n\n  return "DIRECT";\n}');
     file.end();
 
 }

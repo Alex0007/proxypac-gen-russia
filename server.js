@@ -1,11 +1,11 @@
+var dump_url = 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv';
+
 var fs = require('fs');
 var express = require('express');
 var schedule = require('node-schedule');
 var request = require('request');
 var async = require('async');
 var moment = require('moment');
-
-var dump_url = 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv';
 
 var app = express();
 app.use(express.static(__dirname + '/static'));

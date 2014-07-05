@@ -1,5 +1,5 @@
 var dump_url = 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv';
-Раз два три
+
 var fs = require('fs');
 var express = require('express');
 var schedule = require('node-schedule');

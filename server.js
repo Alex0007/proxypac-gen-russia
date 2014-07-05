@@ -1,5 +1,5 @@
 var dump_url = 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv';
-var proxy_string = 'SOCKS5 127.0.0.1:9050'; // tor proxy
+var proxy_string = 'SOCKS 127.0.0.1:9050'; // tor proxy
 
 
 var fs = require('fs');
@@ -23,7 +23,11 @@ function find_IP(filename) { //parse ip adresses from file
         for (var key in ips) {
             ips[key] = ips[key].slice(0, -1);
         }
-
+        var uniq_ips = ips.reduce(function (a, b) { //remove duplicates
+            if (a.indexOf(b) < 0) a.push(b);
+            return a;
+        }, []);
+        ips = uniq_ips;
         build_pac(__dirname + '/static/proxy.pac', ips); //generate pac-file
 
     });
@@ -39,7 +43,7 @@ function build_pac(filename, ips) { // .pac-file builder
     file.write('function FindProxyForURL(url, host) {\n  blockedips = [ ');
     // insert IPs start
     for (var key in ips) {
-        file.write('\n    "'+ips[key]+'",');
+        file.write('\n    "' + ips[key] + '",');
     }
     file.write('\n');
     // insert IPs end

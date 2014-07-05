@@ -4,6 +4,7 @@
     "dependencies": {
         "express": "x",
         "node-schedule": "x",
-        "async": "x"
+        "async": "x",
+        "moment": "x"
     }
 }

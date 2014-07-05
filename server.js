@@ -14,14 +14,17 @@ var moment = require('moment');
 var app = express();
 app.use(express.static(__dirname + '/static'));
 
-function find_IP(filename) { //parse ip adresses from file
+function parse_dump(filename) { //parse ip adresses from file
+    console.log('parse started');
     var fs = require('fs')
     fs.readFile(filename, 'utf8', function (err, data) {
         if (err) {
             return console.log(err);
         }
-        var re = /(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]);/g;
-        var ips = data.match(re);
+        var regex_ip = /(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]);/g;
+        var regex_url = /(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/g;
+        var ips = data.match(regex_ip);
+        var urls = data.match(regex_url);
         for (var key in ips) {
             ips[key] = ips[key].slice(0, -1);
         }
@@ -29,13 +32,18 @@ function find_IP(filename) { //parse ip adresses from file
             if (a.indexOf(b) < 0) a.push(b);
             return a;
         }, []);
+        var uniq_urls = urls.reduce(function (a, b) { //remove duplicates
+            if (a.indexOf(b) < 0) a.push(b);
+            return a;
+        }, []);
         ips = uniq_ips;
-        build_pac(__dirname + '/static/proxy.pac', ips); //generate pac-file
+        urls = uniq_urls;
+        build_pac(__dirname + '/static/proxy.pac', ips, urls); //generate pac-file
 
     });
 }
 
-function build_pac(filename, ips) { // .pac-file builder
+function build_pac(filename, ips, urls) { // .pac-file builder
     console.log('generating new proxy pac');
 
     console.log(ips.length);
@@ -48,8 +56,19 @@ function build_pac(filename, ips) { // .pac-file builder
         file.write('\n    "' + ips[key] + '",');
     }
     file.write('\n');
+    file.write('      ]');
+
     // insert IPs end
-    file.write('      ];\n\n  if (blockedips.indexOf(dnsResolve(host)) != -1) {\n    return "' + proxy_string + '; DIRECT";\n  }\n\n  return "DIRECT";\n}');
+
+    //insert URLs start
+    file.write('\n  blockedurls = [ ');
+    for (var key in urls) {
+        file.write('\n    "' + urls[key] + '",');
+    }
+    file.write('\n');
+    // insert URLs end
+
+    file.write('      ];\n\n  if ((blockedips.indexOf(dnsResolve(host)) != -1) || (blockedurls.indexOf(host) != -1)) {\n    return "' + proxy_string + '; DIRECT";\n  }\n\n  return "DIRECT";\n}');
     file.end();
 
 }
@@ -61,7 +80,7 @@ function generate_pac() {
     r.on("finish", function () {
 
         // call IPs parser
-        find_IP("dump.txt");
+        parse_dump("dump.txt");
     });
 }
 

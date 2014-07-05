@@ -1,3 +1,5 @@
+// TODO PARSE URLs var blocked_urls
+
 var dump_url = 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv';
 var proxy_string = 'SOCKS 127.0.0.1:9050'; // tor proxy
 

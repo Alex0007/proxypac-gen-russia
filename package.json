@@ -1,10 +1,11 @@
 {
-    "name": "proxypac_tor_russia",
+    "name": "proxypac_gen_russia",
     "private": true,
     "dependencies": {
         "express": "x",
         "node-schedule": "x",
         "async": "x",
-        "moment": "x"
+        "moment": "x",
+        "request": "x"
     }
 }

@@ -1,5 +1,6 @@
 var dump_url = 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv';
 var proxy_string = 'SOCKS5 127.0.0.1:9050'; // tor proxy
+var proxy_pac_path = __dirname + '/static/proxy.pac';
 
 
 var fs = require('fs');
@@ -36,7 +37,7 @@ function parse_dump(filename) { //parse ip adresses from file
         }
         ips = remove_duplicates(ips);
         urls = remove_duplicates(urls);
-        build_pac(__dirname + '/static/proxy.pac', ips, urls); //generate pac-file
+        build_pac(proxy_pac_path, ips, urls); //generate pac-file
 
     });
 }
@@ -71,7 +72,7 @@ function build_pac(filename, ips, urls) { // .pac-file builder
 function generate_pac() {
     //saving file with rkn dump
     var file = fs.createWriteStream("dump.txt");
-    var r = request("https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv").pipe(file);
+    var r = request(dump_url).pipe(file);
     r.on("finish", function () {
 
         // call parser
@@ -79,11 +80,14 @@ function generate_pac() {
     });
 }
 
-generate_pac();
-var rule = new schedule.RecurrenceRule();
-rule.minute = new schedule.Range(0, 59, 15); // run task every 15 minutes
-schedule.scheduleJob(rule, generate_pac);
 
-var server = app.listen(process.env.PORT || 3000, function () { //starting web-server
-    console.log('Listening on port %d', server.address().port);
-});
+generate_pac();
+if (process.argv.indexOf('--once') == -1) {
+    var rule = new schedule.RecurrenceRule();
+    rule.minute = new schedule.Range(0, 59, 30); // run task every 30 minutes
+    schedule.scheduleJob(rule, generate_pac);
+
+    var server = app.listen(process.env.PORT || 3000, function () { //starting web-server
+        console.log('Listening on port %d', server.address().port);
+    });
+}

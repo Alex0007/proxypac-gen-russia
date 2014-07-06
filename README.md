@@ -6,7 +6,7 @@
 *****
 
 ##Автоматическое использование
-Вам понадобится установленный и запущенный [Tor](https://www.torproject.org/download/download.html.en).
+Вам понадобится установленный и запущенный [Tor](https://www.torproject.org/download/download.html.en) (рекомендую в связке с Vidalia).
 
 **Chrome**: Настройки → Показать дополнительные настройки → Изменить настройки прокси-сервера → Настройка сети. Вставить ссылку [http://proxypac-gen-russia.herokuapp.com/proxy.pac](http://proxypac-gen-russia.herokuapp.com/proxy.pac) в строку "Использовать сценарий автоматической настройки".
 

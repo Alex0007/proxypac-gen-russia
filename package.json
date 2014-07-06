@@ -12,7 +12,6 @@
         "express": "x",
         "node-schedule": "x",
         "moment": "x",
-        "request": "x",
-        "fs": "x"
+        "request": "x"
     }
 }

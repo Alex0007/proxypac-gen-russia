@@ -14,7 +14,7 @@
 
 **Opera**: CTRL+F12 → Расширенные → Сеть → Прокси-серверы. Вставить ссылку [http://proxypac-gen-russia.herokuapp.com/proxy.pac](http://proxypac-gen-russia.herokuapp.com/proxy.pac) в строку "Автоматическая конфигурция прокси-сервера".
 
-##Ручная работа
+##Ручной запуск
 Хотите запускать скрипт собственноручно?
 
 `nodejs server.js` для запуска службы, которая раз в полчаса будет обновлять proxy.pac 

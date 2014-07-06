@@ -1,5 +1,17 @@
 {
     "name": "proxypac_gen_russia",
+    "main": "server.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Alex0007/proxypac_gen_russia.git"
+    },
+    "author": "Alex0007",
+    "keywords": [
+        "proxy.pac",
+        "tor",
+        "РосКомНадзор",
+        "цензура"
+    ],
     "dependencies": {
         "express": "x",
         "node-schedule": "x",

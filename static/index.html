@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>TITLE</title>
+    <meta charset="utf-8">
+    <title>proxypac-gen-russia</title>
 </head>
+
 <body>
-    HELLO, WORLD.
+    <p><em>Свежий .pac файл можно взять здесь: <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a></em>
+    </p>
+
+    <hr />
+
+    <p>Генератор .pac файла для tor на базе выгрузки Роскомнадзора. Позволит серфить интернет оптимальным способом, не думая о переключении между <em>Прокси ↔ Прямое соединение</em>. На заблокированных сайтах будет включаться TOR, иначе - прямое соединение.</p>
+
+    <h2>Автоматическое использование</h2>
+
+    <p>Вам понадобится установленный и запущенный <a href="https://www.torproject.org/download/download.html.en">Tor</a>.</p>
+
+    <p><strong>Chrome</strong>: Настройки → Показать дополнительные настройки → Изменить настройки прокси-сервера → Настройка сети. Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку "Использовать сценарий автоматической настройки".</p>
+
+    <p><strong>Firefox</strong>: Правка → Настройки → Дополнительные → Сеть → Настроить... Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку "URL автоматической настройки сервиса прокси".</p>
+
+    <p><strong>Opera</strong>: CTRL+F12 → Расширенные → Сеть → Прокси-серверы. Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку "Автоматическая конфигурция прокси-сервера".</p>
+
+    <h2>Ручная работа</h2>
+
+    <p>Хотите запускать скрипт собственноручно?</p>
+
+    <p><code>nodejs server.js</code> для запуска службы, которая раз в полчаса будет обновлять proxy.pac</p>
+
+    <p><code>nodejs server.js --once</code> для единовременного запуска</p>
+
+    <h3>Переменные</h3>
+
+    <p>В начале скрипта задаются некоторые перменные, которые можно изменить, при желании</p>
+
+    <ul>
+        <li><code>var dump_url = 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv';</code> - путь к выгрузке РосКомНадзора</li>
+        <li><code>var proxy_string = 'SOCKS5 127.0.0.1:9050';</code> - строка proxy.pac, отвечающая за использование прокси (в данном случае переменная настроена на использование Tor)</li>
+        <li><code>var proxy_pac_path = __dirname + '/static/proxy.pac';</code> - путь к генерируемому proxy.pac файлу</li>
+    </ul>
+<a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>
 </body>
+
 </html>

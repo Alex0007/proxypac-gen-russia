@@ -11,8 +11,8 @@
     "dependencies": {
         "express": "x",
         "node-schedule": "x",
-        "async": "x",
         "moment": "x",
-        "request": "x"
+        "request": "x",
+        "fs": "x"
     }
 }

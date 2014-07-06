@@ -7,7 +7,6 @@ var fs = require('fs');
 var express = require('express');
 var schedule = require('node-schedule');
 var request = require('request');
-var async = require('async');
 var moment = require('moment');
 
 var app = express();

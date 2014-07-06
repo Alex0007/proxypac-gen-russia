@@ -20,6 +20,17 @@ function remove_duplicates(array) {
     return uniq_array;
 }
 
+function removeMatching(originalArray, regex) {
+    var j = 0;
+    while (j < originalArray.length) {
+        if (regex.test(originalArray[j]))
+            originalArray.splice(j, 1);
+        else
+            j++;
+    }
+    return originalArray;
+}
+
 function parse_dump(filename) { //parse ip adresses from file
     console.log('parse started');
     var fs = require('fs')
@@ -36,6 +47,8 @@ function parse_dump(filename) { //parse ip adresses from file
         }
         ips = remove_duplicates(ips);
         urls = remove_duplicates(urls);
+        urls = removeMatching(urls, /.php$|.html$|.jpe?g$|.png$/); // cleaning some trash
+
         build_pac(proxy_pac_path, ips, urls); //generate pac-file
 
     });

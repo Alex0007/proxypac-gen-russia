@@ -3,7 +3,7 @@
 
 *Свежий .pac файл можно взять здесь: [http://proxypac-gen-russia.herokuapp.com/proxy.pac](http://proxypac-gen-russia.herokuapp.com/proxy.pac)*
 
-![!img](http://3.bp.blogspot.com/-8Xu2gWlu324/U7lQxG1fooI/AAAAAAAAETc/o9RSrabK-SY/s1600/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%821.png)
+![!img](http://2.bp.blogspot.com/-lkftvqdHtPs/U7mSaIhtCbI/AAAAAAAAETs/PlMSHOie6IQ/s1600/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%821.png)
 
 ##Автоматическое использование
 Вам понадобится установленный и запущенный [Tor](https://www.torproject.org/download/download.html.en) (рекомендую в связке с Vidalia).

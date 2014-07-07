@@ -6,18 +6,54 @@
     <title>proxypac-gen-russia</title>
 </head>
 <style>
+    html, body{margin: 0;}
     body {
         font-size: 20px;
+        text-align: justify;
+    }
+    #content {
+        top: 30px;
+        max-width: 650px;
+        background: rgba(0, 0, 0, 0.07);
+        margin: 0 auto;
+        position: relative;
+        border: 1px solid rgba(0, 0, 0, 0.26);
+    }
+    #link {
+        background: rgba(115, 255, 0, 0.49);
+        text-align: center;
+        padding: 20px 0px;
+                box-shadow: 0px 0px 10px rgba(115, 255, 0, 0.49);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+
+    }
+    #descr {
+        padding: 20px 40px;
+        color: rgb(51, 51, 51);
+    }
+    footer {
+        text-align: right;
+        position: relative;
+        display: block;
+        padding: 4px 10px;
+        border-top: 1px solid rgba(0, 0, 0, 0.26);
+    }
+    footer a {
+        text-decoration: none;
     }
 </style>
 
 <body>
-    <ul>
-        <li><a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">Свежая версия proxy.pac</a>
-        </li>
-        <li><a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>
-        </li>
-    </ul>
+    <div id="content">
+        <div id="link">
+            <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a><br>
+            cвежая версия proxy.pac
+        </div>
+        <div id="descr">Данные настройки позволят оптимально использовать TOR там, где он действительно необходим. Применив их вы забудете о цензуре и неправомерных блокировках. Актуальные инструкции доступны по <a href="https://github.com/Alex0007/proxypac_gen_russia#%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">ссылке</a>.</div>
+
+        <footer><a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>
+        </footer>
+    </div>
 </body>
 
 </html>

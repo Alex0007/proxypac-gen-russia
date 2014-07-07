@@ -6,53 +6,61 @@
     <title>proxypac-gen-russia</title>
 </head>
 <style>
-    html, body{margin: 0;}
+    html,
+    body {
+        margin: 0;
+    }
     body {
         font-size: 20px;
         text-align: justify;
+        margin: 20px auto;
     }
-    #content {
-        top: 30px;
-        max-width: 650px;
-        background: rgba(0, 0, 0, 0.07);
-        margin: 0 auto;
-        position: relative;
-        border: 1px solid rgba(0, 0, 0, 0.26);
-    }
-    #link {
-        background: rgba(115, 255, 0, 0.49);
-        text-align: center;
-        padding: 20px 0px;
-                box-shadow: 0px 0px 10px rgba(115, 255, 0, 0.49);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.26);
-
-    }
-    #descr {
-        padding: 20px 40px;
-        color: rgb(51, 51, 51);
+    body,
+    img {
+        max-width: 700px;
     }
     footer {
-        text-align: right;
-        position: relative;
-        display: block;
-        padding: 4px 10px;
-        border-top: 1px solid rgba(0, 0, 0, 0.26);
-    }
-    footer a {
-        text-decoration: none;
+        text-align: center;
     }
 </style>
 
 <body>
-    <div id="content">
-        <div id="link">
-            <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a><br>
-            cвежая версия proxy.pac
-        </div>
-        <div id="descr">Данные настройки позволят оптимально использовать TOR там, где он действительно необходим. Применив их вы забудете о цензуре и неправомерных блокировках. Актуальные инструкции доступны по <a href="https://github.com/Alex0007/proxypac_gen_russia#%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">ссылке</a>.</div>
+    <!--Markdown begin-->
+    <h2 id="описание">Описание</h2>
 
-        <footer><a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>
-        </footer>
+    <p>Генератор .pac файла для tor на базе выгрузки Роскомнадзора. Позволит серфить интернет забыв о существовании цензуры и блокировок, не думать о переключении между <code>Прокси</code> ↔ <code>Прямое соединение</code>. На заблокированных сайтах будет включаться TOR, иначе - прямое соединение.</p>
+
+    <p><em>Свежий .pac файл можно взять здесь: <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a></em>
+    </p>
+
+    <p>
+        <img src="http://2.bp.blogspot.com/-lkftvqdHtPs/U7mSaIhtCbI/AAAAAAAAETs/PlMSHOie6IQ/s1600/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%821.png" alt="!img" title="">
+    </p>
+    <div class="se-section-delimiter"></div>
+
+    <h2 id="автоматическое-использование">Автоматическое использование</h2>
+
+    <p>Вам понадобится установленный и запущенный <a href="https://www.torproject.org/download/download.html.en">Tor</a> (рекомендую в связке с Vidalia).</p>
+
+    <p><strong>Chrome</strong>: Настройки → Показать дополнительные настройки → Изменить настройки прокси-сервера → Настройка сети. Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “Использовать сценарий автоматической настройки”.</p>
+
+    <p><strong>Firefox</strong>: Правка → Настройки → Дополнительные → Сеть → Настроить… Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “URL автоматической настройки сервиса прокси”.</p>
+
+    <p><strong>Opera</strong>: CTRL+F12 → Расширенные → Сеть → Прокси-серверы. Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “Автоматическая конфигурция прокси-сервера”.</p>
+
+    <h2 id="возможные-проблемы">Возможные проблемы</h2>
+
+    <p>Настроили всё по инструкции, а блокировки остались? Ниже перечислены типичные проблемы и их решения</p>
+
+    <ul>
+        <li>Возможно, ваш Tor не запущен - убедитесь, что иконка Vidalia окрашена в зеленый цвет.</li>
+        <li>Возможно, в качестве выходной ноды Tor выбрал узел из российского сегмента интернета - заходите в панель управления Vidalia → Сменить личность.</li>
+        <li>Возможно, ваш провайдер осуществляет блокировки сайтов на уровне DNS - поможет установка <a href="https://developers.google.com/speed/public-dns/">Google</a> / <a href="http://dns.yandex.ru/">Yandex</a> DNS в качестве DNS серверов.</li>
+    </ul>
+
+    <!--Markdown end-->
+    <footer><a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>
+    </footer>
     </div>
 </body>
 

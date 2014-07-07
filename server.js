@@ -38,7 +38,7 @@ function parse_dump(filename) { //parse ip adresses from file
         if (err) {
             return console.log(err);
         }
-        var regex_ip = /(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]);/g;
+        var regex_ip = /(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\s|;)/g;
         var regex_url = /(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/g;
         var ips = data.match(regex_ip);
         var urls = data.match(regex_url);

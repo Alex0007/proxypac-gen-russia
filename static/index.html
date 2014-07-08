@@ -25,42 +25,46 @@
 </style>
 
 <body>
-    <!--Markdown begin-->
-    <h2 id="описание">Описание</h2>
+    <div id="content">
 
-    <p>Генератор .pac файла для tor на базе выгрузки Роскомнадзора. Позволит серфить интернет забыв о существовании цензуры и блокировок, не думать о переключении между <code>Прокси</code> ↔ <code>Прямое соединение</code>. На заблокированных сайтах будет включаться TOR, иначе - прямое соединение.</p>
+        <!--Markdown begin-->
+        <h2 id="описание">Описание</h2>
 
-    <p><em>Свежий .pac файл можно взять здесь: <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a></em>
-    </p>
+        <p>Генератор .pac файла для tor на базе выгрузки Роскомнадзора. Позволит серфить интернет забыв о существовании цензуры и блокировок, не думать о переключении между <code>Прокси</code> ↔ <code>Прямое соединение</code>. На заблокированных сайтах будет включаться TOR, иначе - прямое соединение.</p>
 
-    <p>
-        <img src="http://2.bp.blogspot.com/-lkftvqdHtPs/U7mSaIhtCbI/AAAAAAAAETs/PlMSHOie6IQ/s1600/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%821.png" alt="!img" title="">
-    </p>
-    <div class="se-section-delimiter"></div>
+        <p>Свежий .pac файл можно взять здесь:
+            <br>
+            <em><a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a></em>
+        </p>
 
-    <h2 id="автоматическое-использование">Автоматическое использование</h2>
+        <p>
+            <img src="http://2.bp.blogspot.com/-lkftvqdHtPs/U7mSaIhtCbI/AAAAAAAAETs/PlMSHOie6IQ/s1600/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%821.png" alt="!img" title="">
+        </p>
 
-    <p>Вам понадобится установленный и запущенный <a href="https://www.torproject.org/download/download.html.en">Tor</a> (рекомендую в связке с Vidalia).</p>
+        <h2 id="автоматическое-использование">Автоматическое использование</h2>
 
-    <p><strong>Chrome</strong>: Настройки → Показать дополнительные настройки → Изменить настройки прокси-сервера → Настройка сети. Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “Использовать сценарий автоматической настройки”.</p>
+        <p>Вам понадобится установленный и запущенный <a href="https://www.torproject.org/download/download.html.en">Tor</a> (рекомендую в связке с Vidalia).</p>
 
-    <p><strong>Firefox</strong>: Правка → Настройки → Дополнительные → Сеть → Настроить… Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “URL автоматической настройки сервиса прокси”.</p>
+        <p><strong>Chrome</strong>: Настройки → Показать дополнительные настройки → Изменить настройки прокси-сервера → Настройка сети. Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “Использовать сценарий автоматической настройки”.</p>
 
-    <p><strong>Opera</strong>: CTRL+F12 → Расширенные → Сеть → Прокси-серверы. Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “Автоматическая конфигурция прокси-сервера”.</p>
+        <p><strong>Firefox</strong>: Правка → Настройки → Дополнительные → Сеть → Настроить… Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “URL автоматической настройки сервиса прокси”.</p>
 
-    <h2 id="возможные-проблемы">Возможные проблемы</h2>
+        <p><strong>Opera</strong>: CTRL+F12 → Расширенные → Сеть → Прокси-серверы. Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “Автоматическая конфигурция прокси-сервера”.</p>
 
-    <p>Настроили всё по инструкции, а блокировки остались? Ниже перечислены типичные проблемы и их решения</p>
+        <h3 id="возможные-проблемы">Возможные проблемы</h3>
 
-    <ul>
-        <li>Возможно, ваш Tor не запущен - убедитесь, что иконка Vidalia окрашена в зеленый цвет.</li>
-        <li>Возможно, в качестве выходной ноды Tor выбрал узел из российского сегмента интернета - заходите в панель управления Vidalia → Сменить личность.</li>
-        <li>Возможно, ваш провайдер осуществляет блокировки сайтов на уровне DNS - поможет установка <a href="https://developers.google.com/speed/public-dns/">Google</a> / <a href="http://dns.yandex.ru/">Yandex</a> DNS в качестве DNS серверов.</li>
-    </ul>
+        <p>Настроили всё по инструкции, а блокировки остались? Ниже перечислены типичные проблемы и их решения</p>
 
-    <!--Markdown end-->
-    <footer><a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>
-    </footer>
+        <ul>
+            <li>Возможно, ваш Tor не запущен - убедитесь, что иконка Vidalia окрашена в зеленый цвет.</li>
+            <li>Возможно, в качестве выходной ноды Tor выбрал узел из российского сегмента интернета - заходите в панель управления Vidalia → Сменить личность.</li>
+            <li>Возможно, ваш провайдер осуществляет блокировки сайтов на уровне DNS - поможет установка <a href="https://developers.google.com/speed/public-dns/">Google</a> / <a href="http://dns.yandex.ru/">Yandex</a> DNS в качестве DNS серверов.</li>
+        </ul>
+
+        <!--Markdown end-->
+        <hr>
+        <footer><a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>
+        </footer>
     </div>
 </body>
 

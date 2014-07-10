@@ -57,11 +57,11 @@
 
         <h2 id="автоматическое-использование">Автоматическое использование</h2>
 
-        <h4 id="1-шаг">1 шаг</h4>
+        <h4 id="1-шаг">1 шаг:</h4>
 
         <p>Вам понадобится установленный и запущенный <a href="https://www.torproject.org/download/download.html.en">Tor</a> (рекомендую в связке с Vidalia).</p>
 
-        <h4 id="2-шаг">2 шаг</h4>
+        <h4 id="2-шаг">2 шаг:</h4>
 
         <p><strong>Chrome</strong>: Настройки → Показать дополнительные настройки → Изменить настройки прокси-сервера → Настройка сети. Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “Использовать сценарий автоматической настройки”.</p>
 
@@ -84,6 +84,24 @@
         <p>
             <img src="http://2.bp.blogspot.com/-lkftvqdHtPs/U7mSaIhtCbI/AAAAAAAAETs/PlMSHOie6IQ/s1600/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%821.png" alt="!img" title="">
         </p>
+
+        <h2 id="ручной-запуск">Ручной запуск</h2>
+
+        <p>Хотите запускать скрипт собственноручно?</p>
+
+        <p><code>nodejs server.js</code> для запуска службы, которая раз в полчаса будет обновлять proxy.pac</p>
+
+        <p><code>nodejs server.js --once</code> для единовременного запуска</p>
+
+        <h3 id="переменные">Переменные</h3>
+
+        <p>В начале скрипта задаются некоторые перменные, которые можно изменить, при желании</p>
+
+        <p><code>var dump_url = 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv';</code> - путь к выгрузке РосКомНадзора</p>
+
+        <p><code>var proxy_string = 'SOCKS5 127.0.0.1:9050';</code> - строка proxy.pac, отвечающая за использование прокси (в данном случае переменная настроена на использование Tor)</p>
+
+        <p><code>var proxy_pac_path = __dirname + '/static/proxy.pac';</code> - путь к генерируемому proxy.pac файлу</p>
         <!--Markdown end-->
         <hr>
         <footer><a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>

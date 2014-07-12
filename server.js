@@ -76,7 +76,6 @@ function build_pac(filename, ips, urls) { // .pac-file builder
     file.write('\n\n  if ((blocked_ips.indexOf(dnsResolve(host)) != -1) || (blocked_urls.indexOf(host) != -1)) {\n    return "' + proxy_string + '; DIRECT";\n  }\n  if (dnsDomainIs(host, ".onion")) {\n    return "SOCKS5 127.0.0.1:9050; DIRECT"; // tor proxy\n  }\n\n  return "DIRECT";\n}');
     file.end();
     console.log('.pac file generated successfully at ' + moment().utc().add('hours', 4).format('LLL') + " (MSK)\n");
-
 }
 
 function generate_pac() {
@@ -108,6 +107,5 @@ if (process.argv.indexOf('--once') == -1) {
         var r = request('https://raw.githubusercontent.com/Alex0007/proxypac-gen-russia/master/README.md', function (error, response, body) {
             res.send(body)
         });
-
     });
 }

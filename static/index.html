@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <title>proxypac-gen-russia</title>
     <link href="http://s001.youpic.su/pictures/1405022400/6158123064df6178be93373fa140fd7e.png" rel="shortcut icon" type="image/x-icon" />
-
+    <meta name="description" content="Идеальное решение для обхода цензуры в РФ">
+    <meta name="keywords" content="proxy, Tor, РосКомНадзор, цензура, сайт заблокирован, обойти">
+    <meta name="author" content="Alex0007">
 </head>
 <style>
     html,
@@ -46,68 +48,19 @@
 
 <body>
     <div id="content">
+        <div id="markdown">
+            Загрузка README..
+        </div>
+        <script src="js/markdown.min.js"></script>
+        <script src="//yandex.st/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            $.ajax({
+                url: "github_readme",
+            }).done(function (data) {
+                document.getElementById('markdown').innerHTML = markdown.toHTML(data);
 
-        <!--Markdown begin-->
-        <h1 id="proxypac-gen-russia">proxypac-gen-russia <img src="http://s001.youpic.su/pictures/1404936000/cef2fefab7059a439aa8f4b3f6dececb.png" alt="!img" title=""></h1>
-
-        <p>Данные настройки позволят серфить интернет забыв о существовании цензуры и блокировок, не думать о переключении между <code>Прокси</code> ↔ <code>Прямое соединение</code>. На заблокированных сайтах будет включаться TOR, иначе - прямое соединение.</p>
-
-        <p>Это самый рациональный способ использования TOR для обычных пользователей, которым необходимо иметь доступ к своим любимым сайтам.</p>
-
-        <p>Свежий .pac файл можно взять здесь:
-            <br>
-            <em><a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a></em>
-        </p>
-        <div class="se-section-delimiter"></div>
-
-        <h2 id="автоматическое-использование">Автоматическое использование</h2>
-
-        <h4 id="1-шаг">1 шаг:</h4>
-
-        <p>Вам понадобится установленный и запущенный <a href="https://www.torproject.org/download/download.html.en">Tor</a> (рекомендую в связке с Vidalia).</p>
-
-        <h4 id="2-шаг">2 шаг:</h4>
-
-        <p><strong>Chrome</strong>: Настройки → Показать дополнительные настройки → Изменить настройки прокси-сервера → Настройка сети. Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “Использовать сценарий автоматической настройки”.</p>
-
-        <p><strong>Firefox</strong>: Правка → Настройки → Дополнительные → Сеть → Настроить… Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “URL автоматической настройки сервиса прокси”.</p>
-
-        <p><strong>Opera</strong>: CTRL+F12 → Расширенные → Сеть → Прокси-серверы. Вставить ссылку <a href="http://proxypac-gen-russia.herokuapp.com/proxy.pac">http://proxypac-gen-russia.herokuapp.com/proxy.pac</a> в строку “Автоматическая конфигурция прокси-сервера”.</p>
-
-        <h3 id="возможные-проблемы">Возможные проблемы</h3>
-
-        <p>Настроили всё по инструкции, а блокировки остались? Ниже перечислены типичные проблемы и их решения</p>
-
-        <ul>
-            <li>Возможно, ваш Tor не запущен - убедитесь, что иконка Vidalia окрашена в зеленый цвет.</li>
-            <li>Возможно, в качестве выходной ноды Tor выбрал узел из российского сегмента интернета - заходите в панель управления Vidalia → Сменить личность.</li>
-            <li>Возможно, ваш провайдер осуществляет блокировки сайтов на уровне DNS - поможет установка <a href="https://developers.google.com/speed/public-dns/">Google</a> / <a href="http://dns.yandex.ru/">Yandex</a> DNS в качестве DNS серверов.</li>
-        </ul>
-
-        <h2 id="схема-работы">Схема работы</h2>
-
-        <p>
-            <img src="http://2.bp.blogspot.com/-lkftvqdHtPs/U7mSaIhtCbI/AAAAAAAAETs/PlMSHOie6IQ/s1600/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%821.png" alt="!img" title="">
-        </p>
-
-        <h2 id="ручной-запуск">Ручной запуск</h2>
-
-        <p>Хотите запускать скрипт собственноручно?</p>
-
-        <p><code>nodejs server.js</code> для запуска службы, которая раз в полчаса будет обновлять proxy.pac</p>
-
-        <p><code>nodejs server.js --once</code> для единовременного запуска</p>
-
-        <h3 id="переменные">Переменные</h3>
-
-        <p>В начале скрипта задаются некоторые перменные, которые можно изменить, при желании</p>
-
-        <p><code>var dump_url = 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv';</code> - путь к выгрузке РосКомНадзора</p>
-
-        <p><code>var proxy_string = 'SOCKS5 127.0.0.1:9050';</code> - строка proxy.pac, отвечающая за использование прокси (в данном случае переменная настроена на использование Tor)</p>
-
-        <p><code>var proxy_pac_path = __dirname + '/static/proxy.pac';</code> - путь к генерируемому proxy.pac файлу</p>
-        <!--Markdown end-->
+            });
+        </script>
         <hr>
         <footer><a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>
             <a id="stats" title="Web Statistics" href="http://clicky.com/100752214">

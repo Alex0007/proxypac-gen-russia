@@ -103,4 +103,11 @@ if (process.argv.indexOf('--once') == -1) {
     var server = app.listen(process.env.PORT || 3000, function () { //starting web-server
         console.log('Listening on port %d', server.address().port);
     });
+
+    app.get('/github_readme', function (req, res) {
+        var r = request('https://raw.githubusercontent.com/Alex0007/proxypac-gen-russia/master/README.md', function (error, response, body) {
+            res.send(body)
+        });
+
+    });
 }

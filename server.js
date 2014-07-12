@@ -40,7 +40,6 @@ function array_to_pac(array, array_name, writeStream) {
     writeStream.write('      ]\n');
 }
 
-
 function parse_dump(filename) { //parse ip adresses from file
     var fs = require('fs')
     fs.readFile(filename, 'utf8', function (err, data) {
@@ -62,8 +61,6 @@ function parse_dump(filename) { //parse ip adresses from file
 
     });
 }
-
-
 
 function build_pac(filename, ips, urls) { // .pac-file builder
     console.log('generating new proxy pac');
@@ -96,7 +93,6 @@ function generate_pac() {
         throw e;
     }
 }
-
 
 generate_pac();
 if (process.argv.indexOf('--once') == -1) {

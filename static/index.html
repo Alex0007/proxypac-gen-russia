@@ -23,6 +23,10 @@
     body {
         max-width: 760px;
     }
+    #loading {
+        text-align: center;
+        color: gray;
+    }
     img {
         max-width: 100%;
     }
@@ -31,14 +35,14 @@
     }
     hr {
         border: none;
-        border-bottom: 1px solid rgba(172, 172, 172, 1);
+        border-bottom: 1px solid gray;
     }
     footer {
         font-size: 80%;
         font-style: italic;
     }
     footer a {
-        color: rgba(0, 0, 0, 0.75);
+        color: gray;
     }
     #stats {
         position: relative;
@@ -49,7 +53,7 @@
 <body>
     <div id="content">
         <div id="markdown">
-            Загрузка README..
+            <div id="loading">Загрузка README..</div>
         </div>
         <script src="js/markdown.min.js"></script>
         <script src="//yandex.st/jquery/2.1.1/jquery.min.js"></script>

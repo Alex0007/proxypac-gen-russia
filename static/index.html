@@ -49,19 +49,17 @@
 <body>
     <div id="content">
         <div id="markdown">
-            Технические работы
+            Загрузка..
         </div>
         <script src="js/markdown.min.js"></script>
-        <script src="http://yandex.st/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//yandex.st/jquery/2.1.1/jquery.min.js"></script>
         <script>
-            var flickerAPI = "https://raw.githubusercontent.com/Alex0007/proxypac-gen-russia/master/README.md";
-            $.getJSON(flickerAPI)
-                .done(function (data) {
-                    document.getElementById('markdown').innerHTML = markdown.toHTML(data);
+            $.ajax({
+                url: "github_readme",
+            }).done(function (data) {
+                document.getElementById('markdown').innerHTML = markdown.toHTML(data);
 
-                });
-
-            document.getElementById('markdown').innerHTML = markdown.toHTML("");
+            });
         </script>
         <hr>
         <footer><a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>

@@ -50,31 +50,18 @@
     <div id="content">
         <div id="markdown">
 
-
         </div>
         <script src="js/markdown.min.js"></script>
+        <script src="http://yandex.st/jquery/2.1.1/jquery.min.js"></script>
         <script>
-function httpGet(theUrl)
-{
-    if (window.XMLHttpRequest)
-    {// code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-    }
-    else
-    {// code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange=function()
-    {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
-            return xmlhttp.responseText;
-        }
-    }
-    xmlhttp.open("GET", theUrl, false );
-    xmlhttp.send();
-}
-            document.getElementById('markdown').innerHTML = markdown.toHTML(httpGet('https://raw.githubusercontent.com/Alex0007/proxypac-gen-russia/master/README.md?callback=?'));
+            var flickerAPI = "https://raw.githubusercontent.com/Alex0007/proxypac-gen-russia/master/README.md";
+            $.getJSON(flickerAPI)
+                .done(function (data) {
+                    document.getElementById('markdown').innerHTML = markdown.toHTML(data);
+
+                });
+
+            document.getElementById('markdown').innerHTML = markdown.toHTML("");
         </script>
         <hr>
         <footer><a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>

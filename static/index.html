@@ -40,6 +40,7 @@
     footer {
         font-size: 80%;
         font-style: italic;
+        display: none;
     }
     footer a {
         color: gray;
@@ -56,14 +57,14 @@
             <div id="loading">Загрузка README..</div>
         </div>
         <script src="js/markdown.min.js"></script>
-        <script src="//yandex.st/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//microajax.googlecode.com/files/microajax.minified.js"></script>
         <script>
-            $.ajax({
-                url: "github_readme",
-            }).done(function (data) {
-                document.getElementById('markdown').innerHTML = markdown.toHTML(data);
+            microAjax("github_readme",
+                function (res) {
+                    document.getElementById('markdown').innerHTML = markdown.toHTML(res);
+                    document.getElementsByTagName('footer')[0].style.display = "block";
 
-            });
+                });
         </script>
         <hr>
         <footer><a href="https://github.com/Alex0007/proxypac_gen_russia">Проект на GitHub</a>

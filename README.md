@@ -1,4 +1,4 @@
-#proxypac-gen-russia ![!img](http://s001.youpic.su/pictures/1404936000/cef2fefab7059a439aa8f4b3f6dececb.png)
+#proxypac-gen-russia ![!img](http://i.imgur.com/om5d2Sh.png)
 
 Данные настройки позволят серфить интернет забыв о существовании цензуры и блокировок, не думать о переключении между `Прокси` ↔ `Прямое соединение`. На заблокированных сайтах будет включаться TOR, иначе - прямое соединение. 
 
@@ -29,7 +29,7 @@
 * Возможно, ваш провайдер осуществляет блокировки сайтов на уровне DNS - поможет установка [Google](https://developers.google.com/speed/public-dns/) / [Yandex](http://dns.yandex.ru/) DNS  в качестве DNS серверов.
  
 ##Схема работы
- ![!img](http://2.bp.blogspot.com/-lkftvqdHtPs/U7mSaIhtCbI/AAAAAAAAETs/PlMSHOie6IQ/s1600/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%821.png)
+ ![!img](http://i.imgur.com/Q8SDSzO.png)
 
 ##Ручной запуск
 Хотите запускать скрипт собственноручно?

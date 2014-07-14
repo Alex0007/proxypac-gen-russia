@@ -85,13 +85,13 @@
             microAjax("github_readme",
                 function (res) {
                     document.getElementById('markdown').innerHTML = markdown.toHTML(res);
-                    setTimeout(function () {
-                        document.getElementsByTagName('footer')[0].style.display = "block";
-                    }, 300);
                 });
         } catch (e) {
             document.getElementById('markdown').innerHTML = "Что-то пошло не так. Попробуйте перезагрузить страницу.";
         }
+        setTimeout(function () {
+            document.getElementsByTagName('footer')[0].style.display = "block";
+        }, 1000);
     </script>
 </body>
 

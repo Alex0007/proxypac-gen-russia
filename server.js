@@ -104,13 +104,15 @@ if (process.argv.indexOf('--once') == -1) {
     });
 
     app.get('/github_readme', function (req, res) { // getting content from github and sending to user
-        try {
-            var r = request('https://raw.githubusercontent.com/Alex0007/proxypac-gen-russia/master/README.md', function (error, response, body) {
-                res.send(body)
-            });
-        } catch (e) {
-            console.log('Something going wrong in /github_readme: ' + e.message);
-            res.send('Что-то пошло не так. Попробуйте перезагрузить страницу.');
-        }
+        var r = request('https://raw.githubusercontent.com/Alex0007/proxypac-gen-russia/master/README.md', function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+
+                res.send(body);
+            } else {
+                console.log('Something going wrong in /github_readme');
+                res.send('Что-то пошло не так. Попробуйте перезагрузить страницу.');
+            }
+        });
+
     });
 }

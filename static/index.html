@@ -97,7 +97,9 @@
 
         }, 1000);
         setTimeout(function () {
-            document.getElementById('loading').innerHTML = "Что-то пошло не так. Попробуйте перезагрузить страницу.";
+            try {
+                document.getElementById('loading').innerHTML = "Что-то пошло не так. Попробуйте перезагрузить страницу.";
+            }
         }, 5000);
     </script>
 </body>

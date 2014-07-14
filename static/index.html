@@ -87,17 +87,18 @@
     <script src="js/markdown.min.js"></script>
     <script src="js/microajax.minified.js"></script>
     <script>
-        try {
-            microAjax("github_readme",
-                function (res) {
-                    document.getElementById('markdown').innerHTML = markdown.toHTML(res);
-                });
-        } catch (e) {
-            document.getElementById('markdown').innerHTML = "Что-то пошло не так. Попробуйте перезагрузить страницу.";
-        }
+        microAjax("github_readme",
+            function (res) {
+                document.getElementById('markdown').innerHTML = markdown.toHTML(res);
+            });
+
         setTimeout(function () {
             document.getElementsByTagName('footer')[0].style.display = "block";
+
         }, 1000);
+        setTimeout(function () {
+            document.getElementById('loading').innerHTML = "Что-то пошло не так. Попробуйте перезагрузить страницу.";
+        }, 5000);
     </script>
 </body>
 

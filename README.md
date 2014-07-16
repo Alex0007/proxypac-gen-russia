@@ -36,7 +36,7 @@
  ![!img](http://i.imgur.com/Q8SDSzO.png)
 
 ##Ручной запуск
-Хотите запускать скрипт собственноручно?
+Хотите запускать [скрипт](https://github.com/Alex0007/proxypac-gen-russia/) собственноручно?
 
 `nodejs server.js` для запуска службы, которая раз в полчаса будет обновлять proxy.pac 
 

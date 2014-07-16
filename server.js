@@ -99,19 +99,21 @@ if (process.argv.indexOf('--once') == -1) {
     rule.minute = new schedule.Range(0, 59, 30); // run task every 30 minutes
     schedule.scheduleJob(rule, generate_pac);
 
-    var server = app.listen(process.env.PORT || 3000, function () { // starting web-server
-        console.log('Listening on port %d', server.address().port);
-    });
-
-    app.get('/github_readme', function (req, res) { // getting content from github and sending to user
-        var r = request('https://raw.githubusercontent.com/Alex0007/proxypac-gen-russia/master/README.md', function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                res.send(body);
-            } else {
-                console.log('Something going wrong in /github_readme');
-                res.send('Что-то пошло не так. Попробуйте перезагрузить страницу.');
-            }
+    if (process.argv.indexOf('--webserver') != -1) {
+        var server = app.listen(process.env.PORT || 3000, function () { // starting web-server
+            console.log('Listening on port %d', server.address().port);
         });
 
-    });
+        app.get('/github_readme', function (req, res) { // getting content from github and sending to user
+            var r = request('https://raw.githubusercontent.com/Alex0007/proxypac-gen-russia/master/README.md', function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    res.send(body);
+                } else {
+                    console.log('Something going wrong in /github_readme');
+                    res.send('Что-то пошло не так. Попробуйте перезагрузить страницу.');
+                }
+            });
+
+        });
+    }
 }

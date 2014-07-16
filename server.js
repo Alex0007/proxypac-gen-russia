@@ -73,7 +73,7 @@ function build_pac(filename, ips, urls) { // .pac-file builder
     array_to_pac(ips, 'blocked_ips', file);
     array_to_pac(urls, 'blocked_urls', file);
 
-    file.write('\n\n  if ((blocked_ips.indexOf(dnsResolve(host)) != -1) || (blocked_urls.indexOf(host) != -1)) {\n    return "' + proxy_string + '; DIRECT";\n  }\n  if (dnsDomainIs(host, ".onion")) {\n    return "SOCKS5 127.0.0.1:9050; DIRECT"; // tor proxy\n  }\n  if (dnsDomainIs(host, ".i2p")) {\n    return "PROXY 127.0.0.1:4444"; // i2p proxy\n}\n\n  return "DIRECT";\n}');
+    file.write('\n\n  if ((blocked_ips.indexOf(dnsResolve(host)) != -1) || (blocked_urls.indexOf(host) != -1)) {\n    return "' + proxy_string + '; DIRECT";\n  }\n  if (dnsDomainIs(host, ".onion")) {\n    return "SOCKS5 127.0.0.1:9050; DIRECT"; // tor proxy\n  }\n  if (dnsDomainIs(host, ".i2p")) {\n    return "PROXY 127.0.0.1:4444"; // i2p proxy\n  }\n\n  return "DIRECT";\n}');
     file.end();
     console.log('.pac file generated successfully at ' + moment().utc().add('hours', 4).format('LLL') + " (MSK)\n");
 }

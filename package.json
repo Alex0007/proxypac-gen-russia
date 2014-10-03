@@ -2,6 +2,10 @@
     "name": "proxypac-gen-russia",
     "main": "server.js",
     "author": "Alex0007",
+    "scripts": {
+        "start": "node server.js --webserver"
+    },
+    "subdomain": "proxypac-gen-russia",
     "keywords": [
         "proxy.pac",
         "tor",

@@ -1,4 +1,4 @@
-#[proxypac-gen-russia](http://proxypac-gen-russia.herokuapp.com/) ![!img](http://i.imgur.com/om5d2Sh.png)
+#[proxypac-gen-russia](http://proxypac-gen-russia.herokuapp.com/) ![!img](http://i.imgur.com/om5d2Sh.png) 
 
 Данные настройки позволят серфить интернет забыв о существовании цензуры и блокировок, не думать о переключении между `Прокси` ↔ `Прямое соединение`. На заблокированных сайтах будет включаться TOR, иначе - прямое соединение. 
 

@@ -17,5 +17,8 @@
         "node-schedule": "x",
         "moment": "x",
         "request": "x"
-    }
+    },
+    "engines": {
+        "node": "0.10.x"
+    },
 }

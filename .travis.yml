@@ -1,6 +1,0 @@
-notifications:  
-  webhooks: 
-    urls:
-      - http://webhooks.nodejitsu.com
-    on_success: always
-    on_failure: never

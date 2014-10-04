@@ -1,9 +1,16 @@
 language: node_js
 node_js:
-  - "0.10"
+- '0.10'
 notifications:
   webhooks:
     urls:
-      - http://webhooks.nodejitsu.com/1/deploy
+    - http://webhooks.nodejitsu.com/1/deploy
     on_success: always
     on_failure: always
+deploy:
+  provider: nodejitsu
+  user: alex0007lolpvp
+  api_key:
+    secure: OOIMAUeoVc3sMvkI2RKimycYNhGx3OlP+7z9bsFVEegj4j1Tw5YeU8iqdoBPyDb1bPPREXmS0Oynzpz95VSt8NTCaL4rAD9OQ6iXWa3csIv6WYCYbDsxLFyVtlKK7x5EUP27HOeJ6LsqdWIusOL7jx6i+C2TJYWEraZU2Ssv+70=
+  on:
+    repo: Alex0007/proxypac-gen-russia

@@ -11,6 +11,8 @@ var moment = require('moment');
 
 var app = express();
 app.use(express.static(__dirname + '/static'));
+app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
+
 
 function remove_duplicates(array) {
     var uniq_array = array.reduce(function (a, b) {

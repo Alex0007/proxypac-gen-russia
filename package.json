@@ -1,25 +1,26 @@
 {
-    "name": "proxypac-gen-russia",
-    "version": "0.0.2",
-    "main": "server.js",
-    "author": "Alex0007",
-    "scripts": {
-        "start": "node server.js --webserver"
-    },
-    "subdomain": "proxypac-gen-russia",
-    "keywords": [
-        "proxy.pac",
-        "tor",
-        "РосКомНадзор",
-        "цензура"
-    ],
-    "dependencies": {
-        "express": "x",
-        "node-schedule": "x",
-        "moment": "x",
-        "request": "x"
-    },
-    "engines": {
-        "node": "x"
-    }
+  "name": "proxypac-gen-russia",
+  "version": "0.0.2",
+  "main": "server.js",
+  "author": "Alex0007",
+  "scripts": {
+    "start": "node server.js --webserver"
+  },
+  "subdomain": "proxypac-gen-russia",
+  "keywords": [
+    "proxy.pac",
+    "tor",
+    "РосКомНадзор",
+    "цензура"
+  ],
+  "dependencies": {
+    "express": "x",
+    "moment": "x",
+    "node-schedule": "x",
+    "prerender-node": "^1.1.1",
+    "request": "x"
+  },
+  "engines": {
+    "node": "x"
+  }
 }

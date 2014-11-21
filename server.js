@@ -113,7 +113,7 @@ if (process.argv.indexOf('--once') == -1) {
 
         app.get('/', function (req, res) {
             var file = require('path').resolve(__dirname, './static/index.html')
-            res.sendFile(file)
+            res.sendfile(file)
         })
 
 

@@ -4,14 +4,10 @@ var proxy_pac_path = __dirname + '/static/proxy.pac';
 
 
 var fs = require('fs');
-var express = require('express');
 var schedule = require('node-schedule');
 var request = require('request');
 var moment = require('moment');
 
-var app = express();
-app.use(express.static(__dirname + '/static'));
-app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
 
 
 function remove_duplicates(array) {
@@ -101,9 +97,25 @@ if (process.argv.indexOf('--once') == -1) {
     schedule.scheduleJob(rule, generate_pac);
 
     if (process.argv.indexOf('--webserver') != -1) {
+
+
+
+        var express = require('express');
+        var app = express();
+        app.use(require('prerender-node'));
+
+
         var server = app.listen(process.env.PORT || 3000, function () { // starting web-server
             console.log('Listening on port %d', server.address().port);
         });
+
+
+
+        app.get('/', function (req, res) {
+            var file = require('path').resolve(__dirname, './static/index.html')
+            res.sendFile(file)
+        })
+
 
         app.get('/github_readme', function (req, res) { // getting content from github and sending to user
             var r = request('https://raw.githubusercontent.com/Alex0007/proxypac-gen-russia/master/README.md', function (error, response, body) {
@@ -116,5 +128,8 @@ if (process.argv.indexOf('--once') == -1) {
             });
 
         });
+
+        app.use(express.static(__dirname + '/static'));
+
     }
 }

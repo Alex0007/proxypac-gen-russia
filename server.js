@@ -7,7 +7,7 @@ var fs = require('fs');
 var schedule = require('node-schedule');
 var request = require('request');
 var moment = require('moment');
-
+var path = require('path')
 
 
 function remove_duplicates(array) {
@@ -54,8 +54,9 @@ function parse_dump(filename) { //parse ip adresses from file
         urls = remove_duplicates(urls);
         urls = removeMatching(urls, /.php$|.html$|.jpe?g$|.png$/); // cleaning some trash
 
-        build_pac(proxy_pac_path, ips, urls); // generate pac-file
+        build_pac(__dirname + '/static/proxy_new.pac', ips, urls); // generate pac-file
 
+        fs.rename(__dirname + '/static/proxy_new.pac', proxy_pac_path)
     });
 }
 
@@ -121,6 +122,11 @@ if (process.argv.indexOf('--once') == -1) {
             });
 
         });
+
+        app.get('/proxy.pac', function (req, res) {
+            console.log(req.connection.remoteAddress + ': proxypac requested at ' + moment().format('LLL'))
+            res.sendFile(path.join(__dirname, '/static', 'proxy.pac'))
+        })
 
         app.use(express.static(__dirname + '/static'));
 

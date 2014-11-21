@@ -110,13 +110,6 @@ if (process.argv.indexOf('--once') == -1) {
         });
 
 
-
-        app.get('/', function (req, res) {
-            var file = require('path').resolve(__dirname, './static/index.html')
-            res.sendfile(file)
-        })
-
-
         app.get('/github_readme', function (req, res) { // getting content from github and sending to user
             var r = request('https://raw.githubusercontent.com/Alex0007/proxypac-gen-russia/master/README.md', function (error, response, body) {
                 if (!error && response.statusCode == 200) {

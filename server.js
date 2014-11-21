@@ -102,7 +102,7 @@ if (process.argv.indexOf('--once') == -1) {
 
         var express = require('express');
         var app = express();
-        app.use(require('prerender-node'));
+        app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
 
 
         var server = app.listen(process.env.PORT || 3000, function () { // starting web-server

@@ -52,7 +52,7 @@ function parse_dump(filename) { //parse ip adresses from file
         }
         ips = remove_duplicates(ips);
         urls = remove_duplicates(urls);
-        urls = removeMatching(urls, /.php$|.html$|.jpe?g$|.png$/); // cleaning some trash
+        urls = removeMatching(urls, /.php$|.html?$|.jpe?g$|.png$|.gif$|.pdf$|.swf$|.wml$/); // cleaning some trash
 
         build_pac(__dirname + '/static/proxy_new.pac', ips, urls); // generate pac-file
 
@@ -124,7 +124,7 @@ if (process.argv.indexOf('--once') == -1) {
         });
 
         app.get('/proxy.pac', function (req, res) {
-            console.log(req.connection.remoteAddress + ': proxypac requested at ' + moment().format('LLL'))
+            console.log(req.ip + ': proxypac requested at ' + moment().format('LLL'))
             res.sendFile(path.join(__dirname, '/static', 'proxy.pac'))
         })
 

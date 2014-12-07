@@ -124,7 +124,12 @@ if (process.argv.indexOf('--once') == -1) {
         });
 
         app.get('/proxy.pac', function (req, res) {
-            console.log(req.ip + ': proxypac requested at ' + moment().format('LLL'))
+            var ip = req.headers['x-forwarded-for'] ||
+                req.connection.remoteAddress ||
+                req.socket.remoteAddress ||
+                req.connection.socket.remoteAddress
+
+            console.log(ip + ': proxypac requested at ' + moment().format('LLL'))
             res.sendFile(path.join(__dirname, '/static', 'proxy.pac'))
         })
 

@@ -3,6 +3,10 @@
     "version": "0.0.3",
     "main": "server.js",
     "author": "Alex0007",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Alex0007/proxypac-gen-russia.git"
+    },
     "scripts": {
         "start": "node server.js"
     },

@@ -42,7 +42,7 @@ if (process.argv.indexOf('--once') == -1) {
 
             console.log(ip + ': proxypac requested at ' + moment().format('LLL'))
 
-            res.pipe(fs.createWriteStream(path.join(__dirname, '/static', 'proxy.pac')))
+            fs.createReadStream(path.join(__dirname, '/static', 'proxy.pac')).pipe(res)
 
         })
 

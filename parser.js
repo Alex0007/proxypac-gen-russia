@@ -2,7 +2,7 @@ var fs = require('fs')
 var moment = require('moment')
 var request = require('request')
 
-function remove_duplicate_entries(array) {
+function removeDuplicates(array) {
     var uniq_array = array.reduce(function(a, b) {
         if (a.indexOf(b) < 0) a.push(b)
         return a
@@ -35,15 +35,15 @@ function parseDump(filename) { //parse ip adresses from file
         if (err) {
             return console.log(err)
         }
-        var regex_ip = /(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\s|)/g
+        var regex_ip = /(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\s)/g
         var regex_url = /(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/g
         var ips = data.match(regex_ip)
         var urls = data.match(regex_url)
         for (var key in ips) {
             ips[key] = ips[key].slice(0, -1)
         }
-        ips = remove_duplicate_entries(ips)
-        urls = remove_duplicate_entries(urls)
+        ips = removeDuplicates(ips)
+        urls = removeDuplicates(urls)
         urls = removeByRegEx(urls, /.php$|.html?$|.jpe?g$|.png$|.gif$|.pdf$|.swf$|.wml$/) // cleaning some trash
 
         build_pac(__dirname + '/static/proxy_new.pac', ips, urls) // generate pac-file

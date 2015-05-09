@@ -1,10 +1,10 @@
 {
     "name": "proxypac-gen-russia",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "server.js",
     "author": "Alex0007",
     "scripts": {
-        "start": "node server.js --webserver"
+        "start": "node server.js"
     },
     "subdomain": "proxypac-gen-russia",
     "keywords": [

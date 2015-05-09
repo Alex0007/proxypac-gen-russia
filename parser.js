@@ -42,6 +42,9 @@ function parseDump(filename) { //parse ip adresses from file
         for (var key in ips) {
             ips[key] = ips[key].slice(0, -1)
         }
+        for (key in urls) {
+            urls[key] = urls[key].replace(/^www./g, '')
+        }
         ips = removeDuplicates(ips)
         urls = removeDuplicates(urls)
         urls = removeByRegEx(urls, /.php$|.html?$|.jpe?g$|.png$|.gif$|.pdf$|.swf$|.wml$/) // cleaning some trash
@@ -61,9 +64,9 @@ function build_pac(filename, ips, urls) { // .pac-file builder
     file.write('function FindProxyForURL(url, host) {')
 
     arrayToFile(ips, 'blocked_ips', file)
-    arrayToFile(urls, 'blocked_urls', file)
+    arrayToFile(urls, 'blocked_domains', file)
 
-    file.write('\n\n  if ((blocked_ips.indexOf(dnsResolve(host)) != -1) || (blocked_urls.indexOf(host) != -1)) {\n    return "' + process.env.PROXYSTRING + ' DIRECT"\n  }\n  if (dnsDomainIs(host, ".onion")) {\n    return "SOCKS5 127.0.0.1:9050 DIRECT" // tor proxy\n  }\n  if (dnsDomainIs(host, ".i2p")) {\n    return "PROXY 127.0.0.1:4444" // i2p proxy\n  }\n\n  return "DIRECT"\n}')
+    file.write('\n\n  if ((blocked_ips.indexOf(dnsResolve(host)) != -1) || (blocked_domains.indexOf(host) != -1)) {\n    return "' + process.env.PROXYSTRING + ' DIRECT"\n  }\n  if (dnsDomainIs(host, ".onion")) {\n    return "SOCKS5 127.0.0.1:9050 DIRECT" // tor proxy\n  }\n  if (dnsDomainIs(host, ".i2p")) {\n    return "PROXY 127.0.0.1:4444" // i2p proxy\n  }\n\n  return "DIRECT"\n}')
     file.end()
     console.log('.pac file generated successfully at ' + moment().format('LLL'))
 }

@@ -5,7 +5,7 @@
 Это самый рациональный способ использования TOR для обычных пользователей, которым необходимо иметь доступ к своим любимым сайтам.
 
 Свежий .pac файл можно взять здесь:
-*[http://proxypac-gen-russia.herokuapp.com/proxy.pac](http://proxypac-gen-russia.herokuapp.com/proxy.pac)*
+*[http://proxypac-gen-russia.alex0007.ru/proxy.pac](http://proxypac-gen-russia.alex0007.ru/proxy.pac)*
 ##Автоматическое использование
 ####1 шаг:
 Вам понадобится установленный и запущенный [Tor](https://www.torproject.org/download/download.html.en) (рекомендую в связке с Vidalia Relay Bundle).

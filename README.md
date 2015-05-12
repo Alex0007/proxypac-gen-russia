@@ -1,20 +1,20 @@
-#[proxypac-gen-russia](http://proxypac-gen-russia.herokuapp.com/) ![!img](http://i.imgur.com/om5d2Sh.png) 
+#[proxypac-gen-russia](https://proxypac-gen-russia.alex0007.ru) ![!img](http://i.imgur.com/om5d2Sh.png) 
 
 Данные настройки позволят серфить интернет забыв о существовании цензуры и блокировок, не думать о переключении между `Прокси` ↔ `Прямое соединение`. На заблокированных сайтах будет включаться TOR, иначе - прямое соединение. 
 
 Это самый рациональный способ использования TOR для обычных пользователей, которым необходимо иметь доступ к своим любимым сайтам.
 
 Свежий .pac файл можно взять здесь:
-*[http://proxypac-gen-russia.herokuapp.com/proxy.pac](http://proxypac-gen-russia.herokuapp.com/proxy.pac)*
+*[https://proxypac-gen-russia.alex0007.ru/proxy.pac](https://proxypac-gen-russia.alex0007.ru/proxy.pac)*
 ##Автоматическое использование
 ####1 шаг:
 Вам понадобится установленный и запущенный [Tor](https://www.torproject.org/download/download.html.en) (рекомендую в связке с Vidalia Relay Bundle).
 ####2 шаг:
-**Chrome**: Настройки → Показать дополнительные настройки → Изменить настройки прокси-сервера → Настройка сети. Вставить ссылку [http://proxypac-gen-russia.herokuapp.com/proxy.pac](http://proxypac-gen-russia.herokuapp.com/proxy.pac) в строку "Использовать сценарий автоматической настройки".
+**Chrome**: Настройки → Показать дополнительные настройки → Изменить настройки прокси-сервера → Настройка сети. Вставить ссылку [https://proxypac-gen-russia.alex0007.ru/proxy.pac](https://proxypac-gen-russia.alex0007.ru/proxy.pac) в строку "Использовать сценарий автоматической настройки".
 
-**Firefox**: Правка → Настройки → Дополнительные → Сеть → Настроить... Вставить ссылку [http://proxypac-gen-russia.herokuapp.com/proxy.pac](http://proxypac-gen-russia.herokuapp.com/proxy.pac) в строку "URL автоматической настройки сервиса прокси".
+**Firefox**: Правка → Настройки → Дополнительные → Сеть → Настроить... Вставить ссылку [https://proxypac-gen-russia.alex0007.ru/proxy.pac](https://proxypac-gen-russia.alex0007.ru/proxy.pac) в строку "URL автоматической настройки сервиса прокси".
 
-**Opera**: CTRL+F12 → Расширенные → Сеть → Прокси-серверы. Вставить ссылку [http://proxypac-gen-russia.herokuapp.com/proxy.pac](http://proxypac-gen-russia.herokuapp.com/proxy.pac) в строку "Автоматическая конфигурция прокси-сервера".
+**Opera**: CTRL+F12 → Расширенные → Сеть → Прокси-серверы. Вставить ссылку [https://proxypac-gen-russia.alex0007.ru/proxy.pac](https://proxypac-gen-russia.alex0007.ru/proxy.pac) в строку "Автоматическая конфигурция прокси-сервера".
 
 ###Заблокированные сайты для проверки
 - [Грани.Ру](http://grani.ru) - стали первым зарегистрированным СМИ в России, заблокированным по "закону Лугового" на неопределенный срок за "призывы к участию в несогласованных акциях"

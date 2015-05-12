@@ -49,6 +49,8 @@ function parseDump(filename) { //parse ip adresses from file
         urls = removeDuplicates(urls)
         urls = removeByRegEx(urls, /.php$|.html?$|.jpe?g$|.png$|.gif$|.pdf$|.swf$|.wml$/) // cleaning some trash
 
+        if (process.env.RUNNING_ON) urls.push(process.env.RUNNING_ON) // add site itself to preserve from blocking
+
         build_pac(__dirname + '/static/proxy_new.pac', ips, urls) // generate pac-file
 
         fs.rename(__dirname + '/static/proxy_new.pac', process.env.PROXYPAC_PATH)

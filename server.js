@@ -1,6 +1,7 @@
 process.env.DUMP_URL = process.env.DUMP_URL || 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv'
 process.env.PROXYSTRING = process.env.PROXYSTRING || 'SOCKS5 127.0.0.1:9050' // tor proxy
 process.env.PROXYPAC_PATH = __dirname + '/static/proxy.pac'
+process.env.RUNNING_ON = process.env.RUNNING_ON || 'proxypac-gen-russia.alex0007.ru'
 
 var fs = require('fs')
 var path = require('path')
@@ -22,10 +23,10 @@ if (process.argv.indexOf('--once') == -1) {
 
         var express = require('express')
         var app = express()
-        app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN))
 
+        if (process.env.PRERENDER_TOKEN) app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN))
 
-        var server = app.listen(process.env.PORT || 3000, function() { // starting web-server
+        var server = app.listen(process.env.PORT || 3000, function() {
             console.log('Listening on port %d', server.address().port)
         })
 

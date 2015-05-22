@@ -1,4 +1,5 @@
-#[proxypac-gen-russia](http://proxypac-gen-russia.alex0007.ru) ![!img](http://i.imgur.com/om5d2Sh.png) 
+#[proxypac-gen-russia](http://proxypac-gen-russia.alex0007.ru) ![!img](http://i.imgur.com/om5d2Sh.png)
+[![!img](https://david-dm.org/alex0007/proxypac-gen-russia.svg)](https://david-dm.org/alex0007/proxypac-gen-russia)
 
 Данные настройки позволят серфить интернет забыв о существовании цензуры и блокировок, не думать о переключении между `Прокси` ↔ `Прямое соединение`. На заблокированных сайтах будет включаться TOR, иначе - прямое соединение. 
 

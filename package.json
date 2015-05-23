@@ -1,30 +1,30 @@
 {
-    "name": "proxypac-gen-russia",
-    "version": "0.0.3",
-    "main": "server.js",
-    "author": "Alex0007",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Alex0007/proxypac-gen-russia.git"
-    },
-    "scripts": {
-        "start": "node server.js"
-    },
-    "subdomain": "proxypac-gen-russia",
-    "keywords": [
-        "proxy.pac",
-        "tor",
-        "РосКомНадзор",
-        "цензура"
-    ],
-    "dependencies": {
-        "express": "x",
-        "moment": "x",
-        "node-schedule": "x",
-        "prerender-node": "x",
-        "request": "x"
-    },
-    "engines": {
-        "node": "x"
-    }
+  "name": "proxypac-gen-russia",
+  "version": "0.0.3",
+  "main": "server.js",
+  "author": "Alex0007",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alex0007/proxypac-gen-russia.git"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "subdomain": "proxypac-gen-russia",
+  "keywords": [
+    "proxy.pac",
+    "tor",
+    "РосКомНадзор",
+    "цензура"
+  ],
+  "dependencies": {
+    "express": "^5.0.0-alpha.1",
+    "moment": "^2.10.3",
+    "node-schedule": "^0.2.7",
+    "prerender-node": "^1.2.1",
+    "request": "^2.55.0"
+  },
+  "engines": {
+    "node": "x"
+  }
 }

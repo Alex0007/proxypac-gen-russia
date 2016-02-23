@@ -1,14 +1,15 @@
 {
   "name": "proxypac-gen-russia",
-  "version": "0.0.3",
-  "main": "server.js",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "export NODE_ENV=production && node index.js",
+    "dev": "export NODE_ENV=development && h --n proxypac-gen-russia -- node-dev -r babel-core/register index.js",
+    "syntax": "standard | snazzy"
+  },
   "author": "Alex0007",
   "repository": {
     "type": "git",
     "url": "https://github.com/Alex0007/proxypac-gen-russia.git"
-  },
-  "scripts": {
-    "start": "node server.js"
   },
   "subdomain": "proxypac-gen-russia",
   "keywords": [
@@ -18,13 +19,20 @@
     "цензура"
   ],
   "dependencies": {
+    "babel-plugin-transform-runtime": "^6.4.3",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
     "express": "^5.0.0-alpha.1",
+    "extend-or-modify": "^1.0.0",
     "moment": "^2.10.3",
     "node-schedule": "^0.2.7",
     "prerender-node": "^1.2.1",
     "request": "^2.55.0"
   },
   "engines": {
-    "node": "x"
+    "node": ">=5.0.0"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }

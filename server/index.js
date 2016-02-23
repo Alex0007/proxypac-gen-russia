@@ -1,14 +1,16 @@
-process.env.DUMP_URL = process.env.DUMP_URL || 'https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv'
-process.env.PROXYSTRING = process.env.PROXYSTRING || 'SOCKS5 127.0.0.1:9050' // tor proxy
-process.env.PROXYPAC_PATH = __dirname + '/static/proxy.pac'
-process.env.RUNNING_ON = process.env.RUNNING_ON || 'proxypac-gen-russia.alex0007.ru'
+import fs from 'fs'
+import path from 'path'
+import moment from 'moment'
+import schedule from 'node-schedule'
+import request from 'request'
+import generatePacFile from '../utils/parse'
 
-var fs = require('fs')
-var path = require('path')
-var moment = require('moment')
-var schedule = require('node-schedule')
-var request = require('request')
-var generatePacFile = require('./parser')
+// var fs = require('fs')
+// var path = require('path')
+// var moment = require('moment')
+// var schedule = require('node-schedule')
+// var request = require('request')
+// var generatePacFile = require('../utils/parse')
 
 generatePacFile(process.env.DUMP_URL)
 

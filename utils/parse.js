@@ -17,7 +17,7 @@ function removeDuplicates (array) {
 
 export default function parseDumpToPac () {
   console.log('generating new proxy.pac')
-  request.get(process.env.DUMP_URL, (err, resp, body) => {
+  request(process.env.DUMP_URL, (err, resp, body) => {
     if (err) {
       return console.log(err)
     }

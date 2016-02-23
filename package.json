@@ -25,7 +25,7 @@
     "extend-or-modify": "^1.0.0",
     "koa": "^2.0.0-alpha.3",
     "koa-send": "^3.1.0",
-    "moment": "^2.10.3",
+    "moment": "^2.11.2",
     "request": "^2.69.0"
   },
   "engines": {

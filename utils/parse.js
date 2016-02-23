@@ -7,7 +7,7 @@ const IP_REGEXP = /(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]
 
 const URL_REGEXP = /(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/g
 
-function removeDuplicates(array) {
+function removeDuplicates (array) {
   let uniq_array = array.reduce(function (a, b) {
     if (a.indexOf(b) < 0) a.push(b)
     return a
@@ -15,7 +15,7 @@ function removeDuplicates(array) {
   return uniq_array
 }
 
-export default function parseDumpToPac(filename) { //parse ip adresses from file
+export default function parseDumpToPac () {
   request.get(process.env.DUMP_URL, (err, resp, body) => {
     if (err) {
       return console.log(err)
@@ -35,11 +35,11 @@ export default function parseDumpToPac(filename) { //parse ip adresses from file
       urls.push(process.env.HOST_DOMAIN)
     }
 
-    build_pac(ips, urls) // generate pac-file
+    buildPac(ips, urls) // generate pac-file
   })
 }
 
-function build_pac(ips, urls) { // .pac-file builder
+function buildPac(ips, urls) { // .pac-file builder
   console.log('generating new proxy pac')
 
   let content = ''

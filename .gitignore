@@ -1,3 +1,5 @@
 node_modules
 *.mod.js
 npm-debug*
+public/proxy.pac
+public/README.md

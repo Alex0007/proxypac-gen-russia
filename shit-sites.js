@@ -3,5 +3,6 @@
  */
 
 export default [
-  'vk.com'
+  'vk.com',
+  'new.vk.com'
 ]

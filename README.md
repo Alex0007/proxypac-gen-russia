@@ -1,3 +1,5 @@
+# DEPRECATED
+
 #[proxypac-gen-russia](http://proxypac-gen-russia.herokuapp.com) ![!img](https://i.imgur.com/om5d2Sh.png)
 [![!img](https://david-dm.org/alex0007/proxypac-gen-russia.svg)](https://david-dm.org/alex0007/proxypac-gen-russia)
 

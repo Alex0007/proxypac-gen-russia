@@ -10,11 +10,7 @@ const IP_REGEXP = /(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]
 const URL_REGEXP = /(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/g
 
 function removeDuplicates (array) {
-  let uniq_array = array.reduce(function (a, b) {
-    if (a.indexOf(b) < 0) a.push(b)
-    return a
-  }, [])
-  return uniq_array
+    return Array.from(new Set(array));
 }
 
 export default function parseDumpToPac () {
